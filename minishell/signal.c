@@ -1,7 +1,20 @@
+signal(SIGQUIT, sigquit_handler)
+
+/*
+    SIGQUIT: É uma constante que representa o sinal específico que você deseja manipular. 
+    Nesse caso, SIGQUIT representa o sinal gerado quando o usuário pressiona Ctrl + \ (backslash) no terminal. 
+    Esse sinal é normalmente usado para solicitar que um programa seja encerrado de forma controlada. 
+    No entanto, ao fornecer um manipulador para esse sinal, você pode alterar o comportamento padrão.
+
+    sigquit_handler: É o nome da função que atuará como o manipulador de sinal para o sinal SIGQUIT. 
+    Essa função deve ter o seguinte formato: void nome_da_funcao(int signal). Como mencionado anteriormente, 
+    ela será chamada quando o sinal SIGQUIT for recebido.
+*/
+
 
 void sigquit_handler(int signal)
 {
-    printf("Você pressionou Ctrl + \\ (SIGQUIT), mas esse sinal foi ignorado.\n");
+    printf("Você pressionou Ctrl + \, mas esse sinal foi ignorado.\n");
 }
 
 /*
